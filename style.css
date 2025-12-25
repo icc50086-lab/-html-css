@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+  color: rgb(255, 136, 0);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column; /* 上下に並べる */
+  align-items: center;
+}
+
+.nav-item:hover {
+  opacity: 0.7;   /* 少し薄くする */     
+}
+
+.nav-en {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.nav-ja {
+  font-size: 11px;
+  color: #666;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+  margin-left: 40px;   /* 左に余白を作る */
+}
+
+.nav .btn {
+  background-color: #ff8800; /* オレンジ */
+  color: white;              /* 文字を白 */
+  padding: 10px 20px;
+  border-radius: 999px;      /* 丸いボタン */
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.fv {
+  background: #ffffff;
+  padding: 40px;
+}
+
+.fv-inner {
+  background: #fff;
+  padding: 150px 180px;
+}
+
+.pill {
+  position: absolute;
+  top: 230px;
+  left: -120px;
+  width: 660px;
+  height: 170px;
+  border: 1px solid orange;
+  border-radius: 9999px;
+  transform: rotate(-45deg); /* ← 傾ける角度 */
+}
+
+.fv-catch {
+  font-weight: 900; /* とても太くする */
+}
+
+/* ボタンを包む白い背景を作る */
+.fv-btn-cover {
+  position: relative;
+  z-index: 1;               /* pill（線）より前面に */
+}
+
+.note {
+  font-size: 12px;      /* 小さくする */
+  color: #777;          /* 薄いグレー */
+}
+
+.fv-image {
+  width: 50%;
+  position: absolute;
+  top: 0;      /* 上 */
+  right: 0; 
+}
+
+.fv-image img {
+  width: 100%;
+}
+
+.fv-btn {
+  display: inline-block;
+  background: rgb(255, 136, 0);
+  color: white;
+  padding: 20px 100px;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.fv-btn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .fv-inner {
+    flex-direction: column;
+  }
+}
+
+.fv-badge {
+  width: 180px;          /* ← 大きくする */
+  height: 180px;         /* ← 大きくする */
+  background: rgb(255, 136, 0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 140px;
+  left: 55%;
+  transform: translateX(-50%);
+}
+
+.badge-text {
+  color: white;
+  text-align: center;
+  font-size: 16px;   /* ← 全体を少し大きく */
+  line-height: 1.4;
+}
+
+.badge-text span {
+  font-size: 36px;   /* ← No.1 を大きく */
+  font-weight: 900;
+}
+
+.triangle-left {
+  position: absolute;
+  top: -77%;
+  left: -344%;
+  border-top: 300px solid orange;
+  border-right: 300px solid transparent;
+}
+
+.triangle-right {
+  position: absolute;
+  bottom: -213%;
+  right: -264%;
+  border-bottom: 340px solid orange;
+  border-left: 340px solid transparent;
+}
+
+.fv {
+  position: relative;
+}
