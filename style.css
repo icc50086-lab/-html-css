@@ -78,7 +78,7 @@ body {
 
 .note {
   font-size: 12px;      /* 小さくする */
-  color: black;          
+  color: black;  
 }
 
 .FirstView__bg-image--right-rectangle {
@@ -92,6 +92,21 @@ body {
   padding: 150px 180px;
 }
 
+.fv-image {
+  width: 1100px;
+  position: absolute;
+  top: -60px;      /* 上 */
+  right: 0px; 
+}
+
+.fv-image img {
+   position: absolute;
+   max-width: 750px;
+   width: 100%; /* ← 画面が狭ければ縮む */
+   right: 0px;
+   z-index: 1;
+}
+
 .pill {
   position: absolute;
   top: 220px;
@@ -103,33 +118,19 @@ body {
   transform: rotate(-45deg); /* ← 傾ける角度 */
 }
 
-.fv-image {
-  width: 1100px;
-  position: absolute;
-  top: -60px;      /* 上 */
-  right: 0px;
-  z-index: 1; 
-}
-
-.fv-image img {
-   position: absolute;
-   max-width: 750px;
-   width: 100%; /* ← 画面が狭ければ縮む */
-   right: 0px;
-}
-
  .fv-catch {
    position: relative;
    font-size: 40px;
    right: 60px;
    font-weight: 900; /* とても太くする */
+   z-index: 1;
  }
 
 /* ボタンを包む白い背景を作る */
  .fv-btn-cover {
    position: relative;
    right: 80px;
-   z-index: 0;               /* pill（線）より前面に */
+   z-index: 2;               /* pill（線）より前面に */
  }
 
  .FirstViewContent {
@@ -141,6 +142,7 @@ body {
    width: 200px;      /* ←画像の大きさも可変に */
    max-width: 180px; /* ←大きくなりすぎ防止 */
    margin-top: -170px;
+   margin-left: -50px; 
    height: auto;
    z-index: 2;
  }
@@ -170,11 +172,13 @@ body {
     width: 100%;
     margin-bottom: 20px;
   }
+
   .pill {
     width: 300px;
     height: 100px;
     top: 200px;
     left: -50px;
+    z-index: 0;
   }
 
   .FirstViewContent__badge-image {
