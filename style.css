@@ -2,15 +2,22 @@ body {
   margin: 0;
 }
 
+.header {
+  position: relative;
+  background: #fff;
+  z-index: 10;
+}
+
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
-.logo {
-  color: rgb(255, 136, 0);
+.HeaderLogo__image--sp {
+    height: 20px;
 }
 
 .nav {
@@ -29,14 +36,14 @@ body {
 }
 
 .nav-en {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #000;
 }
 
 .nav-ja {
   font-size: 11px;
-  color: #666;
+  color: black;
 }
 
 .nav a {
@@ -51,6 +58,7 @@ body {
   padding: 10px 20px;
   border-radius: 999px;      /* 丸いボタン */
   font-weight: bold;
+  margin-left: 40px; /* ← nav-item と統一 */
 }
 
 .btn:hover {
@@ -59,7 +67,24 @@ body {
 
 .fv {
   background: #ffffff;
-  padding: 40px;
+  padding: -20px;
+}
+
+.FirstView__bg-image--left-rectangle {
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.note {
+  font-size: 12px;      /* 小さくする */
+  color: black;          
+}
+
+.FirstView__bg-image--right-rectangle {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
 }
 
 .fv-inner {
@@ -69,46 +94,62 @@ body {
 
 .pill {
   position: absolute;
-  top: 230px;
-  left: -120px;
-  width: 660px;
-  height: 170px;
+  top: 220px;
+  left: -130px;
+  width: 700px;
+  height: 220px;
   border: 1px solid orange;
-  border-radius: 9999px;
+  border-radius: 10020px;
   transform: rotate(-45deg); /* ← 傾ける角度 */
 }
 
-.fv-catch {
-  font-weight: 900; /* とても太くする */
-}
-
-/* ボタンを包む白い背景を作る */
-.fv-btn-cover {
-  position: relative;
-  z-index: 1;               /* pill（線）より前面に */
-}
-
-.note {
-  font-size: 12px;      /* 小さくする */
-  color: #777;          /* 薄いグレー */
-}
-
 .fv-image {
-  width: 50%;
+  width: 1100px;
   position: absolute;
-  top: 0;      /* 上 */
-  right: 0; 
+  top: -60px;      /* 上 */
+  right: 0px;
+  z-index: 1; 
 }
 
 .fv-image img {
-  width: 100%;
+   position: absolute;
+   max-width: 750px;
+   width: 100%; /* ← 画面が狭ければ縮む */
+   right: 0px;
 }
+
+ .fv-catch {
+   position: relative;
+   font-size: 40px;
+   right: 60px;
+   font-weight: 900; /* とても太くする */
+ }
+
+/* ボタンを包む白い背景を作る */
+ .fv-btn-cover {
+   position: relative;
+   right: 80px;
+   z-index: 0;               /* pill（線）より前面に */
+ }
+
+ .FirstViewContent {
+  display: flex;        /* ← 横並びにする */
+  align-items: center;  /* ← 画像と文字の高さを揃える */
+}
+
+.FirstViewContent__badge-image {
+   width: 200px;      /* ←画像の大きさも可変に */
+   max-width: 180px; /* ←大きくなりすぎ防止 */
+   margin-top: -170px;
+   height: auto;
+   z-index: 2;
+ }
 
 .fv-btn {
   display: inline-block;
   background: rgb(255, 136, 0);
   color: white;
-  padding: 20px 100px;
+  padding: 20px 130px;
   border-radius: 50px;
   text-decoration: none;
   margin-top: 10px;
@@ -118,54 +159,51 @@ body {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 768px) {
-  .fv-inner {
+@media screen and (max-width: 768px)  {
+.fv-inner {
+  padding: 40px 20px;
+   flex-direction: column;
+    }
+
+  .fv-image {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .pill {
+    width: 300px;
+    height: 100px;
+    top: 200px;
+    left: -50px;
+  }
+
+  .FirstViewContent__badge-image {
+    margin-top: 10px;
+    width: 120px;
+  }
+
+  /* ▼ 見出しとバッジを縦並びにして重なりを解消 */
+  .FirstViewContent {
     flex-direction: column;
+    align-items: flex-start; /* 左寄せにしたい場合 */
+  }
+
+  /* ▼ 文字サイズをスマホ向けに縮小 */
+  .fv-catch {
+    font-size: 28px;
+  }
+
+  /* ▼ ナビゲーションを折り返して縦に */
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px; /* 余白追加(任意) */
+  }
+
+  .nav a {
+    margin-left: 0; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */
   }
 }
 
-.fv-badge {
-  width: 180px;          /* ← 大きくする */
-  height: 180px;         /* ← 大きくする */
-  background: rgb(255, 136, 0);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 140px;
-  left: 55%;
-  transform: translateX(-50%);
-}
-
-.badge-text {
-  color: white;
-  text-align: center;
-  font-size: 16px;   /* ← 全体を少し大きく */
-  line-height: 1.4;
-}
-
-.badge-text span {
-  font-size: 36px;   /* ← No.1 を大きく */
-  font-weight: 900;
-}
-
-.triangle-left {
-  position: absolute;
-  top: -77%;
-  left: -344%;
-  border-top: 300px solid orange;
-  border-right: 300px solid transparent;
-}
-
-.triangle-right {
-  position: absolute;
-  bottom: -213%;
-  right: -264%;
-  border-bottom: 340px solid orange;
-  border-left: 340px solid transparent;
-}
-
-.fv {
-  position: relative;
-}
+ .fv {
+   position: relative;
+ }
