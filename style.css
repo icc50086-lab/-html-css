@@ -162,23 +162,42 @@ body {
 }
 
 @media screen and (max-width: 768px)  {
+ .HeaderNav,
+ .HeaderCta {
+  display: none;
+ }
+
 .fv-inner {
+  display: flex;
   padding: 40px 20px;
    flex-direction: column;
     }
 
   .fv-image {
-    position: static;
+    position: static;   /* ← absolute解除 */
     width: 100%;
-    margin-bottom: 20px;
+    max-width: 100%;
+    margin: 0 auto 20px;
   }
 
+  .fv-image img {
+    position: static;   /* ← これも重要 */
+    max-width: 100%;
+  }
+
+  .fv-btn {
+  width: auto;
+  padding: 16px 24px;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
   .pill {
-    width: 300px;
-    height: 100px;
-    top: 200px;
-    left: -50px;
-    z-index: 0;
+    width: 250px;
+    height: 80px;
+    top: 120px;
+    left: -30px;
+    opacity: 0.6;
   }
 
   .FirstViewContent__badge-image {
@@ -194,6 +213,8 @@ body {
 
   /* ▼ 文字サイズをスマホ向けに縮小 */
   .fv-catch {
+    right: 0;
+    text-align: left;
     font-size: 28px;
   }
 
