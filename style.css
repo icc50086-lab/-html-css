@@ -236,6 +236,6 @@ body {
    position: relative;
  }
 
-FirstView__bg-image--right-rectangle {
+ .FirstView__bg-image--right-rectangle {
   display: none;
 }
