@@ -72,7 +72,7 @@ body {
 
 .FirstView__bg-image--left-rectangle {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
 }
 
@@ -162,11 +162,6 @@ body {
 }
 
 @media screen and (max-width: 768px)  {
- .HeaderNav,
- .HeaderCta {
-  display: none;
- }
-
 .fv-inner {
   display: flex;
   padding: 40px 20px;
@@ -203,11 +198,18 @@ body {
   }
 
   .FirstView__bg-image--left-rectangle {
+    display: block;
     width: 120px;
     height: 120px;
     top: 0;
     left: 0;
-    opacity: 0.6;
+    background: linear-gradient(
+    135deg,
+    #f7931e 0%
+    #fbb03b 100%
+    );
+    opacity: 1;
+    z-index: 1;
   }
 
   .FirstViewContent__badge-image {
@@ -229,12 +231,6 @@ body {
     font-size: 28px;
   }
 
-  /* ▼ ナビゲーションを折り返して縦に */
-  .nav {
-    flex-wrap: wrap;
-    gap: 10px; /* 余白追加(任意) */
-  }
-
   .nav a {
     margin-left: 0; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */
   }
@@ -244,9 +240,24 @@ body {
    position: relative;
  }
 
- header{
-   display: none;
+ .header{
+   padding: 10px 16px;
  }
+
+/* ▼ ナビゲーションを折り返して縦に */
+  .nav {
+    display: none;
+  }
+
+.HeaderLogo__image {
+  width: 140px;
+  height: auto;
+}
+
+.header-inner{
+ display: flex;
+ align-items: center;
+}
 
 .FirstView__bg-image--right-rectangle{
   display: none;
