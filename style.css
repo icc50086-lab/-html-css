@@ -236,7 +236,15 @@ body {
    position: relative;
  }
 
- .FirstView__bg-image--right-rectangle{
+.nav,
+.nav-item,
+.nav-item:hover,
+.nav-en,
+.nav-ja,
+.nav a,
+.nav .btn,
+.btn:hover,
+.FirstView__bg-image--right-rectangle{
   display: none;
 }
 }
