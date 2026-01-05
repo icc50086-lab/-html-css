@@ -169,7 +169,7 @@ body {
  }
 
   .fv-image {
-    position: static;   /* ← absolute解除 */
+    position: absolute;   
     width: 100%;
     max-width: 100%;
     margin: 0 auto 20px;
