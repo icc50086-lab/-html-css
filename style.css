@@ -162,16 +162,23 @@ body {
 }
 
 @media screen and (max-width: 768px)  {
-.fv-inner {
+ .fv {
+   position: relative;
+ }
+ 
+ .fv-inner {
   display: flex;
   padding: 40px 20px;
   flex-direction: column;
  }
 
   .fv-image {
-    position: absolute;   
-    width: 100%;
-    max-width: 100%;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 90%;
+    z-index: 2;
+    max-width: 360px;
     margin: 0 auto 20px;
   }
 
@@ -179,6 +186,31 @@ body {
     width: 100%;
     height: auto;
   }
+
+  .FirstView__bg-image--left-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(
+    135deg,
+    #f7931e 0%,
+    #fbb03b 100%
+    );
+    opacity: 1;
+    z-index: 1;
+   }
+
+/* ▼ 文字サイズをスマホ向けに縮小 */
+  .fv-catch {
+    position: relative;
+    z-index: 3; 
+    font-size: 28px;
+    margin-top: 260px;
+    text-align: left;
+   }
 
   .fv-btn {
   width: 100%;
@@ -195,59 +227,39 @@ body {
     top: 120px;
     left: -30px;
     opacity: 0.6;
-  }
-
-  .FirstView__bg-image--left-rectangle {
-    display: block;
-    width: 120px;
-    height: 120px;
-    top: 0;
-    left: 0;
-    background: linear-gradient(
-    135deg,
-    #f7931e 0%,
-    #fbb03b 100%
-    );
-    opacity: 1;
-    z-index: 1;
-  }
-
-  .FirstViewContent__badge-image {
+   } 
+    
+   .FirstViewContent__badge-image {
+    position: relative;
+    z-index: 3;
     margin-top: 20px;
     margin-left: 0;
     width: 120px;
   }
 
+  .FirstView__bg-image--right-rectangle{
+   display: none;
+  }
+
+  .nav {
+   display: none;
+   }
+
   /* ▼ 見出しとバッジを縦並びにして重なりを解消 */
   .FirstViewContent {
     flex-direction: column;
     align-items: center; /* 左寄せにしたい場合 */
-  }
+   }
 
-  /* ▼ 文字サイズをスマホ向けに縮小 */
-  .fv-catch {
-    right: 0;
-    text-align: left;
-    font-size: 28px;
-  }
-
-  .nav a {
+   .nav a {
     margin-left: 0; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */
   }
-
-
- .fv {
-   position: relative;
- }
 
  .header{
    padding: 10px 16px;
  }
 
-/* ▼ ナビゲーションを折り返して縦に */
-  .nav {
-    display: none;
-  }
+ /* ▼ ナビゲーションを折り返して縦に */
 
 .HeaderLogo__image {
   width: 140px;
@@ -257,9 +269,5 @@ body {
 .header-inner{
  display: flex;
  align-items: center;
-}
-
-.FirstView__bg-image--right-rectangle{
-  display: none;
-}
+ }
 }
