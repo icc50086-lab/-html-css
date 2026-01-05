@@ -170,8 +170,8 @@ body {
 .fv-inner {
   display: flex;
   padding: 40px 20px;
-   flex-direction: column;
-    }
+  flex-direction: column;
+ }
 
   .fv-image {
     position: static;   /* ← absolute解除 */
@@ -230,12 +230,13 @@ body {
   .nav a {
     margin-left: 0; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */
   }
-}
+
 
  .fv {
    position: relative;
  }
 
- .FirstView__bg-image--right-rectangle {
+ .FirstView__bg-image--right-rectangle{
   display: none;
+}
 }
