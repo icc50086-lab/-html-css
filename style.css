@@ -207,8 +207,8 @@ body {
   .fv-catch {
     position: relative;
     z-index: 3; 
-    font-size: 28px;
-    margin-top: 260px;
+    font-size: 23px;
+    margin-top: 280px;
     text-align: left;
    }
 
@@ -247,6 +247,7 @@ body {
 
   /* ▼ 見出しとバッジを縦並びにして重なりを解消 */
   .FirstViewContent {
+    margin-top: 300px;
     flex-direction: column;
     align-items: center; /* 左寄せにしたい場合 */
    }
