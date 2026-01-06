@@ -161,20 +161,21 @@ body {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 778px)  {
  .fv {
+   padding-top: 60px;
    position: relative;
  }
  
  .fv-inner {
   display: flex;
-  padding-top: 120px;
+  padding-top: 200px;
   flex-direction: column;
  }
 
   .fv-image {
     position: absolute;
-    top: -20px;
+    top: 0px;
     right: 0;
     width: 90%;
     z-index: 2;
@@ -208,7 +209,7 @@ body {
     position: relative;
     z-index: 3; 
     font-size: 23px;
-    margin-top: 160px;
+    margin-top: 200px;
     text-align: left;
    }
 
@@ -222,8 +223,15 @@ body {
 }
 
 .pill {
-  display: none !important;
-   } 
+  position: absolute;
+  top: 290px;
+  left: -110px;
+  width: 600px;
+  height: 180px;
+  border: 1px solid orange;
+  border-radius: 10020px;
+  transform: rotate(-45deg); /* ← 傾ける角度 */
+}
     
    .FirstViewContent__badge-image {
     position: relative;
