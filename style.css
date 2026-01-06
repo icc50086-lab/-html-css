@@ -224,8 +224,8 @@ body {
 
 .pill {
   position: absolute;
-  top: 240px;
-  left: -160px;
+  top: 280px;
+  left: -200px;
   width: 420px;
   height: 130px;
   border: 1px solid orange;
