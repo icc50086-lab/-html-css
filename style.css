@@ -168,13 +168,13 @@ body {
  
  .fv-inner {
   display: flex;
-  padding: 40px 20px;
+  padding-top: 120px;
   flex-direction: column;
  }
 
   .fv-image {
     position: absolute;
-    top: 20px;
+    top: -20px;
     right: 0;
     width: 90%;
     z-index: 2;
