@@ -226,6 +226,7 @@ body {
       
       /* ▼ 文字サイズをスマホ向けに縮小 */ 
       .fv-catch {
+      position: relative;
       right: 0; 
       text-align: left; 
       font-size: 28px; 
