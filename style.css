@@ -251,6 +251,7 @@ body {
 
   /* ▼ 見出しとバッジを縦並びにして重なりを解消 */
   .FirstViewContent {
+    display: flex;
     flex-direction: column;
     align-items: center; /* 左寄せにしたい場合 */
    }
@@ -274,4 +275,10 @@ body {
  display: flex;
  align-items: center;
  }
+
+  .fv-catch br,
+  .note br {
+    display: none;
+  }
+
 }
