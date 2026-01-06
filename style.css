@@ -161,7 +161,7 @@ body {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 778px)  {
+@media screen and (max-width: 768px)  {
  .fv {
    padding-top: 60px;
    position: relative;
@@ -224,10 +224,10 @@ body {
 
 .pill {
   position: absolute;
-  top: 290px;
-  left: -110px;
-  width: 600px;
-  height: 180px;
+  top: 240px;
+  left: -160px;
+  width: 420px;
+  height: 130px;
   border: 1px solid orange;
   border-radius: 10020px;
   transform: rotate(-45deg); /* ← 傾ける角度 */
