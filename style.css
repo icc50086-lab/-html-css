@@ -174,7 +174,7 @@ body {
 
   .fv-image {
     position: absolute;
-    top: 80px;
+    top: 20px;
     right: 0;
     width: 90%;
     z-index: 2;
@@ -221,12 +221,8 @@ body {
   font-size: 16px;
 }
 
-  .pill {
-    width: 250px;
-    height: 80px;
-    top: 120px;
-    left: -30px;
-    opacity: 0.6;
+.pill {
+  display: none !important;
    } 
     
    .FirstViewContent__badge-image {
