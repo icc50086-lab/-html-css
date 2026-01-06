@@ -162,10 +162,7 @@ body {
 }
 
 @media screen and (max-width: 768px)  {
- .fv {
-   padding-top: 60px;
-   position: relative;
- }
+ 
  
  .fv-inner {
   display: flex;
@@ -211,7 +208,6 @@ body {
     font-size: 23px;
     margin-top: 200px;
     text-align: left;
-    background: red;
    }
 
   .fv-btn {
@@ -223,14 +219,19 @@ body {
   font-size: 16px;
 }
 
+.fv {
+   padding-top: 60px;
+   position: relative;
+ }
+
 .pill {
   position: absolute;
   top: 280px;
   left: -200px;
-  width: 420px;
+  width: 400px;
   height: 130px;
   border: 1px solid orange;
-  border-radius: 10020px;
+  border-radius: 9999px;
   transform: rotate(-45deg); /* ← 傾ける角度 */
 }
     
