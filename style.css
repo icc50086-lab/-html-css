@@ -65,6 +65,23 @@ body {
   opacity: 0.8;
 }
 
+.hamburger{
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.hamburger__line{
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #999;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
 .fv {
   background: #ffffff;
   padding: -20px;
@@ -141,7 +158,7 @@ body {
 .FirstViewContent__badge-image {
    width: 200px;      /* ←画像の大きさも可変に */
    max-width: 180px; /* ←大きくなりすぎ防止 */
-   margin-top: -170px;
+   top: -270px;
    margin-left: -50px; 
    height: auto;
    z-index: 2;
@@ -161,62 +178,87 @@ body {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 767px) {
+  body {
+   margin: 0%;
+  }
+
+  .hamburger{
+    display: block;     /* ハンバーガーを出す */
+    margin-left: auto;  /* 右に寄せる */
+  }
+
   .fv-inner { 
-    display: flex; 
-    padding: 40px 20px; 
+    justify-content: space-between;
+    padding: 12px 10px; 
+    height: auto;
     flex-direction: column; 
+    flex-wrap: nowrap;
   } 
 
   .fv-image { 
+    top: -10px;
     position: static; /* ← absolute解除 */ 
-    width: 100%; 
-    max-width: 100%; 
-    margin: 0 auto 20px; 
+    width: 50px; 
+    max-width: 40px; 
+    margin: 0 auto 15px; 
   } 
   
   .fv-image img { 
-    width: 100%; 
+    width: 80%; 
+    top: -10px;
+    right: 0px;
     height: auto; 
   } 
   
-  .fv-btn { 
-    width: 100%; 
-    max-width: 320px; 
-    padding: 16px 0; 
-    text-align: center; 
-    white-space: nowrap; 
-    font-size: 16px; 
-  } 
+.fv-btn { 
+   display: block;
+   width: 100%; 
+   max-width: 390px; 
+   padding: 23px 0; 
+   margin-top: 40px;
+   margin-left: 0px; 
+   text-align: center; 
+   font-size: 16px; 
+} 
+
+ .note {
+   font-size: 12px;      /* 小さくする */
+   padding:  12px 4px;
+   color: rgb(50, 50, 50);  
+}
+
+.fv-btn-cover {
+   right: 0px;
+   bottom: 0px;
+}
+
+.pill { 
+   width: 230px; 
+   height: 80px; 
+   top: 69px; 
+   left: -7px; 
+   opacity: 0.6; 
+}
   
-  .pill { 
-    width: 250px; 
-    height: 80px; 
-    top: 120px; 
-    left: -30px; 
-    opacity: 0.6; 
-  }
-  
-  .FirstView__bg-image--left-rectangle { 
-    display: block; 
-    width: 120px; 
-    height: 120px; 
-    top: 0; 
-    left: 0; 
-    background: linear-gradient( 
-      135deg,
-     #f7931e 0%, 
-     #fbb03b 100% 
-     );
-     opacity: 1; 
-     z-index: 1; 
-    } 
-    
-    .FirstViewContent__badge-image { 
-      margin-top: 20px;
-      margin-left: 0; 
-      width: 120px; 
-     } 
+.FirstView__bg-image--left-rectangle { 
+   display: block; 
+   width: 120px; 
+   height: 120px; 
+   top: 0; 
+   left: 0; 
+   background: linear-gradient( 
+    135deg,
+    #f7931e 0%, 
+    );
+    z-index: 1; 
+   } 
+      
+.FirstViewContent__badge-image { 
+   margin-top: 90px;
+   margin-left: 220px; 
+   width: 100px; 
+   } 
      
      /* ▼ 見出しとバッジを縦並びにして重なりを解消 */ 
      .FirstViewContent { 
@@ -225,15 +267,15 @@ body {
       }
       
       /* ▼ 文字サイズをスマホ向けに縮小 */ 
-      .fv-catch {
-      position: relative;
-      right: 0; 
-      text-align: left; 
-      font-size: 28px; 
-    }
+       .fv-catch {
+       bottom: -230px;
+       left: -60px; 
+       text-align: left; 
+       font-size: 22px; 
+     }
     
     .nav a { 
-      margin-left: 0; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */ 
+      margin-right: auto; /* ← 左余白を消す（中央表示にしたい場合はmargin:autoも可） */ 
     } 
 
     .fv { 
@@ -241,7 +283,7 @@ body {
     }
     
     .header{ 
-      padding: 10px 16px; 
+      padding: 0 18px; 
     }
     
     /* ▼ ナビゲーションを折り返して縦に */ 
@@ -263,3 +305,105 @@ body {
       display: none; 
     } 
   }
+
+/* iPad mini / タブレット用 */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  body {
+    margin: 0;
+  }
+
+  .header{ 
+    padding: 13px 18px; 
+  }
+
+  .hamburger{
+    display: block;     /* ハンバーガーを出す */
+    margin-left: auto;  /* 右に寄せる */
+  }
+
+  /* iPadではスマホ用の小さすぎる指定をしない */
+  .fv-inner{
+    padding: 90px 40px;
+    height: auto;
+  }
+
+  .pill { 
+    width: 640px; 
+    height: 210px; 
+    top: 309px; 
+    left: -150px; 
+    color: #f7931e;
+    opacity: 5.5; 
+    z-index: 0;
+  }
+
+  .fv-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 800px;      /* 820〜980で微調整 */
+    z-index: 1;
+  }
+
+  .fv-image img{
+    position: static;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+  }
+
+  /* 見出し：右画像くらい大きく */
+  .fv-catch{
+    position: relative;
+    font-size: 44px;
+    left: 0;
+    bottom: -90px;
+  }
+
+  /* バッジ：marginで飛ばさず absolute で置く */
+  .FirstViewContent{
+    position: relative;
+  }
+
+  .FirstViewContent__badge-image{
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    width: 230px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  /* ボタン：中央に */
+  .fv-btn{
+    width: 100%;
+    max-width: 480px;
+    margin: 22px auto 0;
+    margin-left: 90px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .note{
+    max-width: 520px;
+    margin: 10px auto 0;
+    padding: 0 16px;
+  }
+
+  .fv-btn-cover {
+   right: 110px;
+   bottom: -70px;
+}
+
+  /* iPadはナビを消さない（右画像はハンバーガーを使う想定） */
+  .nav{
+    display: none;
+  }
+  
+  .FirstView__bg-image--right-rectangle {
+    position: absolute;
+    right: 0;
+    bottom: 340px;
+}
+}
